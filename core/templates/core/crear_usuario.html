@@ -1,0 +1,63 @@
+{% extends "core/base.html" %}
+
+{% block title %}Crear Usuario{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <h2 class="mb-4">Crear nuevo cliente</h2>
+
+    <div class="card shadow border-0 p-4">
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label>Usuario</label>
+                <input type="text" name="username" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Contraseña</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Nombre</label>
+                <input type="text" name="nombre" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Apellido</label>
+                <input type="text" name="apellido" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Correo</label>
+                <input type="email" name="correo" class="form-control"
+                placeholder="Ej email@email.com">
+            </div>
+
+            <div class="mb-3">
+                <label>Teléfono</label>
+                <input type="text" 
+                name="telefono" 
+                class="form-control" 
+                pattern="9[0-9]{8}"                            
+                maxlength="9"
+                placeholder="Ej 912345678">
+            </div>
+
+            <button class="btn btn-primary">
+                Crear usuario
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

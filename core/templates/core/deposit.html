@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Depósito de Dinero | Alke Wallet{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center justify-content-center py-4">
+
+    <main class="deposit-wrapper">
+
+        <header class="mb-4 text-center">
+            <h2 class="fw-bold">Recargar saldo</h2>
+            <p class="text-light mb-0">
+                Ingresa el monto que deseas agregar a tu cuenta
+            </p>
+        </header>
+        <section class="card deposit-card shadow border-0 p-4">
+            <p class="mb-3">
+                {% load formato_clp %}
+                Saldo actual: <strong>$ {{ cuenta.saldo|clp }}</strong>
+            </p>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                    <div class="mb-4">
+
+                        <label for="monto" class="form-label">
+                            Monto a depositar
+                        </label>
+
+                        <input
+                            type="number"
+                            name="monto"
+                            class="form-control"
+                            placeholder="$ 100000"
+                            min="1"
+                            required
+                            >
+
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+
+                        <button type="submit" class="btn btn-primary">
+                            Confirmar depósito
+                        </button>
+
+                        <a href="{% url 'menu' %}" class="btn btn-outline-light">
+                            Volver al menú
+                        </a>
+
+                    </div>
+
+                </form>
+        </section>
+
+    </main>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "core/base.html" %}
+
+{% block title %}Consultas de base de datos{% endblock %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <h2 class="mb-4">Consultas avanzadas</h2>
+
+
+<div>
+        <button class="btn btn-outline-light w-100 mb-3 text-left" 
+                data-toggle="collapse" 
+                data-target="#movimientosCollapse">
+
+            Movimientos por cuenta
+        </button>
+
+<div id="movimientosCollapse" class="collapse">
+
+    <div class="card shadow border-0 p-4 mb-4">
+
+        <table class="table table-hover text-center">
+
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th>Cuenta</th>
+                    <th>Cliente</th>
+                    <th>Total movimientos</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for cuenta in cuentas %}
+                <tr class="numero-dato">
+                    <td>{{ cuenta.numero_cuenta }}</td>
+                    <td>{{ cuenta.cliente.nombre }} {{ cuenta.cliente.apellido }}</td>
+                    <td>{{ cuenta.total_movimientos }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<button class="btn btn-outline-light w-100 mb-3 text-left" 
+        data-toggle="collapse" 
+        data-target="#saldoCollapse">
+
+    Saldo en cuentas
+</button>
+
+<div id="saldoCollapse" class="collapse">
+
+    <div class="card shadow border-0 p-4">
+
+        <table class="table table-hover text-center">
+
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th>Cuenta</th>
+                    <th>Cliente</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for saldo in saldos %}
+                <tr class="saldo-dato">
+                    <td>{{ saldo.numero_cuenta }}</td>
+                    <td>{{ saldo.cliente.nombre }} {{ saldo.cliente.apellido }}</td>
+                    {% load formato_clp %}
+                    <td>$ {{ saldo.saldo|clp }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

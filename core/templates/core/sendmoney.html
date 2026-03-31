@@ -1,0 +1,141 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Transferencia | Alke Wallet{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container d-flex align-items-center justify-content-center py-4">
+
+    <main class="send-wrapper">
+
+        <header class="mb-4 text-center">
+            <h2 class="fw-bold">Transferir dinero</h2>
+            <p class="text-light mb-0">
+                Envía dinero a tus contactos registrados
+            </p>
+        </header>
+
+        <section class="card send-card shadow border-0 p-4">
+                        
+            <button id="toggle-contactos" class="btn btn-outline-light mb-3">
+                Ver contactos
+            </button>
+
+            <div id="lista-contactos" style="display: none;">
+
+                <h5 class="mb-3">Cuentas Registradas</h5>
+
+                <table class="table table-hover text-center">
+
+                    <thead class="text small encabezado-tabla">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cuenta</th>
+                            <th>Usar</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+
+                    {% for contacto in contactos %}
+
+                    <tr class="numero-dato">
+                        <td>{{ contacto.nombre }}</td>
+                        <td>{{ contacto.numero_cuenta }}</td>
+
+                        <td>
+                            <button class="btn btn-sm usar-contacto btn-usar-custom"
+                                data-cuenta="{{ contacto.numero_cuenta }}"
+                                data-nombre="{{ contacto.nombre }}"
+                            >
+                                <img src="{% static 'core/assets/usar.svg' %}" width="16">
+                            </button>
+                        </td>
+
+                        <td>
+                            <a href="{% url 'contacto_update' contacto.id %}">
+                                <div class="btn btn-sm btn-warning-custom">
+                                    <img src="{% static 'core/assets/editar.svg' %}"  width="16">
+                                </div>
+                            </a>
+                        </td>
+
+                        <td>
+                           <a href="{% url 'contacto_delete' contacto.id %}">
+                                <div class="btn btn-sm btn-danger-custom">
+                                    <img src="{% static 'core/assets/eliminar.svg' %}"  width="16">
+                                </div>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+
+            </div>
+
+            <a href="{% url 'contacto_create' %}" class="btn btn-primary mb-3">
+                Agregar contacto
+            </a>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label">Nombre destinatario</label>
+                    <input
+                        type="text"
+                        name="nombre_destinatario"
+                        id="nombre_destinatario"
+                        class="form-control"
+                        placeholder="Nombre del destinatario"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Cuenta destino</label>
+                    <input
+                        type="text"
+                        name="numero_cuenta"
+                        id="numero_cuenta"
+                        class="form-control"
+                        placeholder="Número de cuenta"
+                        required
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Monto</label>
+                    <input
+                        type="number"
+                        name="monto"
+                        class="form-control"
+                        min="1"
+                        required
+                    >
+                </div>
+
+                <button class="btn btn-primary">
+                    Transferir
+                </button>
+
+                <a href="{% url 'menu' %}" class="btn btn-outline-light">
+                    Volver al menú
+                </a>
+            </form>
+
+                    
+
+        </section>
+
+    </main>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}Alke Wallet{% endblock %}</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+
+</head>
+
+
+<body class="min-vh-100 d-flex justify-content-center align-items-center">
+
+<main class="login-wrapper">
+
+<header class="text-center mb-4">
+    <img src="{% static 'core/assets/logo-alke.svg' %}" width="100">
+    <h1 class="fw-bold">Alke Wallet</h1>
+    <p class="text-light mb-0">Tu billetera digital</p>
+</header>
+
+<section class="card login-card shadow border-0 p-4">
+    <h4 class="text-center mb-4">Iniciar sesión</h4>
+
+    <form method="POST">
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+            <label class="form-label">Usuario</label>
+            <input
+                type="text"
+                name="username"
+                class="form-control"
+                required>
+            </div>
+
+            <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input
+                type="password"
+                name="password"
+                class="form-control"
+                required>
+            </div>
+
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <div class="d-grid mt-3">
+            <button type="submit" class="btn btn-primary btn-block">
+            Ingresar
+            </button>
+            </div>
+
+            </form>
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="{% static 'core/js/main.js' %}"></script>
+
+</body>
+
+</html>

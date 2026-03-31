@@ -1,0 +1,17 @@
+<svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Círculo base -->
+    <circle cx="50" cy="50" r="45" fill="url(#grad)"></circle>
+
+    <!-- Letra A estilizada -->
+    <path d="M50 25 L70 75 H60 L55 62 H45 L40 75 H30 L50 25 Z
+             M48 55 H52 L50 48 Z" fill="white"></path>
+
+    <!-- Gradiente -->
+    <defs>
+        <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1f7ae0"></stop>
+            <stop offset="100%" stop-color="#165fbf"></stop>
+        </linearGradient>
+    </defs>
+</svg>

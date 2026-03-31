@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Menú Principal | Alke Wallet{% endblock %}
+
+{% block content %}
+
+<div class="container py-4 menu-page">
+
+<main>
+
+<section class="saldo-card mb-5">
+    <div class="card shadow border-0 p-4">
+        <p class="mb-1 text-light text-uppercase">Mi cuenta Alke</p>
+        <small class="text-light">
+        Cuenta vista {{ cuenta.numero_cuenta }}
+        </small>
+
+        <hr class="bg-light">
+
+        <p class="mb-1">Saldo disponible</p>
+        {% load formato_clp %}
+
+        <h1 class="saldo-valor">$ {{ cuenta.saldo|clp }}</h1>
+
+        <a href="{% url 'transactions' %}" class="btn btn-outline-light btn-block mt-4">
+            Ver mis movimientos →
+        </a>
+    </div>
+</section>
+
+<section class="row justify-content-center text-center acciones-menu">
+
+<div class="col-6 col-md-4 mb-3">
+    <a href="{% url 'sendmoney' %}" class="action-card">
+        <div class="action-icon">
+    <img src="{% static 'core/assets/transfer1.svg' %}">
+</div>
+        <p>Transferir</p>
+    </a>
+</div>
+
+<div class="col-6 col-md-4 mb-3">
+    <a href="{% url 'deposit' %}" class="action-card">
+        <div class="action-icon">
+    <img src="{% static 'core/assets/deposit1.svg' %}">
+</div>
+        <p>Recargar</p>
+    </a>
+</div>
+
+</section>
+
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Menú Principal | Alke Wallet{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center justify-content-center py-4">
+
+    <main class="transactions-wrapper">
+        <header class="mb-4 text-center">
+            <h2 class="fw-bold">Mis movimientos</h2>
+            <p class="text-light mb-0">
+                Revisa el historial de tus transacciones
+            </p>
+        </header>
+
+        <section class="card transactions-card shadow border-0 p-4">
+
+            <div class="table-responsive">
+                <table class="table align-middle mb-0 tabla-transacciones">
+                    <thead>
+                        <tr>
+                            <th>Movimiento</th>
+                            <th class="text-end">Monto</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for movimiento in movimientos %}
+
+                        <tr>
+
+                            <td>{{ movimiento.get_tipo_display }}</td>
+
+                            <td class="text-end">
+                                {% load formato_clp %}
+                                $ {{ movimiento.monto|clp }}
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-grid mt-4">
+                <a href="{% url 'menu' %}" class="btn btn-outline-light">
+                    Volver al menú
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+{% endblock %}

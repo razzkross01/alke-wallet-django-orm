@@ -1,0 +1,11 @@
+usuarios alke wallet
+
+super usuario:
+admin - 123
+
+administrador:
+administrador - Kross@12
+
+usuario normales:
+sofia - Kross@12
+carlos - Kross@12
