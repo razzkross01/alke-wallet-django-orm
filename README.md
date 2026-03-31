@@ -1,4 +1,4 @@
-# 💳 Alke Wallet - Aplicación Web con Django
+#  Alke Wallet - Aplicación Web con Django
 
 Aplicación web desarrollada con Django que simula el funcionamiento de una billetera digital, permitiendo a los usuarios gestionar su cuenta, realizar transferencias, depósitos y visualizar movimientos, utilizando una base de datos relacional y el ORM de Django.
 
@@ -48,7 +48,7 @@ Aplicación web desarrollada con Django que simula el funcionamiento de una bill
 
 ---
 
-### 🛠️ Panel administrativo
+###  Panel administrativo
 - Gestión de usuarios
 - Asociación de clientes con cuentas
 - Visualización de datos
