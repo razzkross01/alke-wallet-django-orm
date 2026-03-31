@@ -1,91 +1,178 @@
-#  Alke Wallet - Aplicación Web con Django
+<h1 align="center">💳 Alke Wallet</h1>
 
-Aplicación web desarrollada con Django que simula el funcionamiento de una billetera digital, permitiendo a los usuarios gestionar su cuenta, realizar transferencias, depósitos y visualizar movimientos, utilizando una base de datos relacional y el ORM de Django.
+<p align="center">
+Aplicación web tipo billetera digital desarrollada con Django.<br>
+Proyecto Fullstack enfocado en lógica de negocio, persistencia de datos y seguridad básica.
+</p>
 
----
+<hr>
 
-## Tecnologías utilizadas
+<h2>🚀 Proyecto de Portafolio</h2>
 
-- Python 3
-- Django
-- SQLite / PostgreSQL
-- HTML5
-- CSS3
-- JavaScript (jQuery)
-- Bootstrap 4
+<p>
+Este proyecto fue desarrollado como parte del proceso de formación Fullstack Python, con el objetivo de simular una aplicación fintech real.
+</p>
 
----
+<p>
+Alke Wallet permite a los usuarios gestionar su dinero, realizar transferencias, administrar contactos y visualizar movimientos, integrando backend, base de datos y frontend en una sola aplicación.
+</p>
 
-##  Funcionalidades principales
+<hr>
 
-###  Autenticación de usuarios
-- Inicio y cierre de sesión
-- Validación de credenciales
-- Protección de vistas con `login_required`
+<h2>🧠 Caso de estudio</h2>
 
----
+<h3>📌 Descripción</h3>
 
-### Gestión de cuenta
-- Visualización de saldo
-- Depósito de dinero
-- Transferencias entre cuentas
-- Validación de saldo y operaciones
+<p>
+Aplicación web construida con Django que simula el funcionamiento de una billetera digital, permitiendo operaciones como depósitos, transferencias y consulta de movimientos en tiempo real.
+</p>
 
----
+<h3>⚠️ Problema a resolver</h3>
 
-### Movimientos
-- Registro automático de transacciones
-- Historial de movimientos por usuario
-- Ordenamiento por fecha
+<p>
+El principal desafío fue desarrollar un sistema que permitiera realizar transferencias de dinero de forma segura, evitando inconsistencias en los saldos y asegurando la integridad de los datos.
+</p>
 
----
+<h3>💡 Solución implementada</h3>
 
-###  Gestión de contactos (CRUD)
-- Crear contactos
-- Editar contactos
-- Eliminar contactos
-- Listar contactos asociados al usuario
+<ul>
+<li>Uso del ORM de Django para modelar entidades como Cliente, Cuenta, Movimiento y Contacto</li>
+<li>Implementación de transacciones atómicas para asegurar consistencia en transferencias</li>
+<li>Validaciones de negocio (saldo suficiente, cuenta válida, no auto-transferencias)</li>
+<li>Sistema de permisos para diferenciar usuarios normales y administradores</li>
+</ul>
 
----
+<p>
+Ejemplo de lógica crítica implementada:
+</p>
 
-###  Panel administrativo
-- Gestión de usuarios
-- Asociación de clientes con cuentas
-- Visualización de datos
+<pre>
+with transaction.atomic():
+    cuenta_origen.saldo -= monto
+    cuenta_destino.saldo += monto
+</pre>
 
----
+<hr>
 
-### Control de permisos
-- Acceso restringido a reportes
-- Uso de permisos personalizados (`view_reportes`)
-- Separación entre usuarios normales y administradores
+<h2>🛠 Tecnologías utilizadas</h2>
 
----
+<ul>
+<li><strong>Backend:</strong> Python, Django</li>
+<li><strong>Base de datos:</strong> PostgreSQL :contentReference[oaicite:3]{index=3}</li>
+<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap</li>
+<li><strong>Arquitectura:</strong> MTV (Model - Template - View)</li>
+</ul>
 
-### Consultas avanzadas
-- Cuentas con más movimientos
-- Cuentas con mayor saldo
-- Uso de ORM con `annotate()` y `Count()`
+<hr>
 
----
+<h2>🧩 Modelo de datos</h2>
 
-## Arquitectura del proyecto
+<p>
+El sistema se estructura en base a relaciones entre entidades principales:
+</p>
 
-El proyecto sigue el patrón **MTV (Model - Template - View)** de Django:
+<ul>
+<li><strong>Cliente:</strong> Información del usuario</li>
+<li><strong>Cuenta:</strong> Asociada a un cliente, maneja saldo</li>
+<li><strong>Movimiento:</strong> Registro de transacciones</li>
+<li><strong>Contacto:</strong> Destinatarios frecuentes</li>
+</ul>
 
-- **Model** → Define la estructura de la base de datos
-- **View** → Contiene la lógica de negocio
-- **Template** → Presentación de datos al usuario
+<p>
+Relación clave:
+</p>
 
----
+<pre>
+Cliente → Cuenta (1 a 1)
+Cuenta → Movimiento (1 a muchos)
+Cliente → Contacto (1 a muchos)
+</pre>
 
-## Modelo de datos
+<hr>
 
-Relaciones principales:
+<h2>🔐 Seguridad y control de acceso</h2>
 
-- Usuario → Cliente (1 a 1)
-- Cliente → Cuenta (1 a 1)
-- Cuenta → Movimiento (1 a muchos)
-- Cliente → Contacto (1 a muchos)
+<ul>
+<li>Autenticación de usuarios con sistema de Django</li>
+<li>Vistas protegidas con login requerido</li>
+<li>Permisos personalizados para acceso a reportes</li>
+<li>Validación de datos en backend</li>
+</ul>
 
----
+<p>
+Ejemplo:
+</p>
+
+<pre>
+PermissionRequiredMixin
+</pre>
+
+<hr>
+
+<h2>⚙️ Funcionalidades principales</h2>
+
+<ul>
+<li>Registro y autenticación de usuarios</li>
+<li>Depósito de dinero</li>
+<li>Transferencias entre cuentas</li>
+<li>Historial de movimientos</li>
+<li>CRUD de contactos</li>
+<li>Panel administrativo con gestión de usuarios</li>
+<li>Reportes de clientes (solo administradores)</li>
+</ul>
+
+<hr>
+
+<h2>📈 Impacto del proyecto</h2>
+
+<ul>
+<li>Aplicación completamente funcional</li>
+<li>Persistencia real de datos en base de datos</li>
+<li>Simulación de lógica financiera</li>
+<li>Implementación de seguridad básica</li>
+<li>Arquitectura organizada y escalable</li>
+</ul>
+
+<hr>
+
+<h2>🧠 Aprendizajes clave</h2>
+
+<ul>
+<li>Uso real del ORM de Django</li>
+<li>Manejo de transacciones seguras</li>
+<li>Separación de responsabilidades (MTV)</li>
+<li>Validación de datos y lógica de negocio</li>
+<li>Integración completa fullstack</li>
+</ul>
+
+<hr>
+
+<h2>🚀 Instalación</h2>
+
+<pre>
+git clone https://github.com/razzkross01/alke-wallet-django-orm
+
+cd alke-wallet
+
+pip install -r requirements.txt
+
+python manage.py migrate
+
+python manage.py runserver
+</pre>
+
+<hr>
+
+<h2>👨‍💻 Autor</h2>
+
+<p>
+Raimundo Arenas<br>
+Desarrollador Fullstack Python Trainee<br>
+Chile 🇨🇱
+</p>
+
+<hr>
+
+<p align="center">
+⭐ Proyecto desarrollado como parte de portafolio profesional
+</p>
