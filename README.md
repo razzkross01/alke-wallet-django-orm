@@ -1,4 +1,4 @@
-<h1 align="center">💳 Alke Wallet</h1>
+<h1 align="center"> Alke Wallet</h1>
 
 <p align="center">
 Aplicación web tipo billetera digital desarrollada con Django.<br>
@@ -7,7 +7,7 @@ Proyecto Fullstack enfocado en lógica de negocio, persistencia de datos y segur
 
 <hr>
 
-<h2>🚀 Proyecto de Portafolio</h2>
+<h2> Proyecto de Portafolio</h2>
 
 <p>
 Este proyecto fue desarrollado como parte del proceso de formación Fullstack Python, con el objetivo de simular una aplicación fintech real.
@@ -19,21 +19,21 @@ Alke Wallet permite a los usuarios gestionar su dinero, realizar transferencias,
 
 <hr>
 
-<h2>🧠 Caso de estudio</h2>
+<h2> Caso de estudio</h2>
 
-<h3>📌 Descripción</h3>
+<h3> Descripción</h3>
 
 <p>
 Aplicación web construida con Django que simula el funcionamiento de una billetera digital, permitiendo operaciones como depósitos, transferencias y consulta de movimientos en tiempo real.
 </p>
 
-<h3>⚠️ Problema a resolver</h3>
+<h3> Problema a resolver</h3>
 
 <p>
 El principal desafío fue desarrollar un sistema que permitiera realizar transferencias de dinero de forma segura, evitando inconsistencias en los saldos y asegurando la integridad de los datos.
 </p>
 
-<h3>💡 Solución implementada</h3>
+<h3> Solución implementada</h3>
 
 <ul>
 <li>Uso del ORM de Django para modelar entidades como Cliente, Cuenta, Movimiento y Contacto</li>
@@ -54,7 +54,7 @@ with transaction.atomic():
 
 <hr>
 
-<h2>🛠 Tecnologías utilizadas</h2>
+<h2> Tecnologías utilizadas</h2>
 
 <ul>
 <li><strong>Backend:</strong> Python, Django</li>
@@ -65,7 +65,7 @@ with transaction.atomic():
 
 <hr>
 
-<h2>🧩 Modelo de datos</h2>
+<h2> Modelo de datos</h2>
 
 <p>
 El sistema se estructura en base a relaciones entre entidades principales:
@@ -90,7 +90,7 @@ Cliente → Contacto (1 a muchos)
 
 <hr>
 
-<h2>🔐 Seguridad y control de acceso</h2>
+<h2> Seguridad y control de acceso</h2>
 
 <ul>
 <li>Autenticación de usuarios con sistema de Django</li>
@@ -109,7 +109,7 @@ PermissionRequiredMixin
 
 <hr>
 
-<h2>⚙️ Funcionalidades principales</h2>
+<h2> Funcionalidades principales</h2>
 
 <ul>
 <li>Registro y autenticación de usuarios</li>
@@ -123,7 +123,7 @@ PermissionRequiredMixin
 
 <hr>
 
-<h2>📈 Impacto del proyecto</h2>
+<h2> Impacto del proyecto</h2>
 
 <ul>
 <li>Aplicación completamente funcional</li>
@@ -135,7 +135,7 @@ PermissionRequiredMixin
 
 <hr>
 
-<h2>🧠 Aprendizajes clave</h2>
+<h2> Aprendizajes clave</h2>
 
 <ul>
 <li>Uso real del ORM de Django</li>
@@ -147,7 +147,7 @@ PermissionRequiredMixin
 
 <hr>
 
-<h2>🚀 Instalación</h2>
+<h2> Instalación</h2>
 
 <pre>
 git clone https://github.com/razzkross01/alke-wallet-django-orm
@@ -161,18 +161,34 @@ python manage.py migrate
 python manage.py runserver
 </pre>
 
-<hr>
 
-<h2>👨‍💻 Autor</h2>
+<h2> Vista previa</h2>
+<p align="center">
+<h3> Inicio de sesión</h3>
+<img src="docs/inicio_sesion.png" width="500">
+
+<h3> Menú principal</h3>
+<img src="docs/menu.png" width="500">
+
+<h3> Transferencias</h3>
+<img src="docs/transferencia.png" width="500">
+
+<h3> Reportes administrativos</h3>
+<img src="docs/reporte.png" width="500">
+
+</p>
+
+<hr>
+<h2>Autor</h2>
 
 <p>
 Raimundo Arenas<br>
 Desarrollador Fullstack Python Trainee<br>
-Chile 🇨🇱
+Chile
 </p>
 
 <hr>
 
 <p align="center">
-⭐ Proyecto desarrollado como parte de portafolio profesional
+Proyecto desarrollado como parte de portafolio profesional
 </p>
