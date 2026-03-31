@@ -58,7 +58,7 @@ with transaction.atomic():
 
 <ul>
 <li><strong>Backend:</strong> Python, Django</li>
-<li><strong>Base de datos:</strong> PostgreSQL :contentReference[oaicite:3]{index=3}</li>
+<li><strong>Base de datos:</strong> PostgreSQL</li>
 <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap</li>
 <li><strong>Arquitectura:</strong> MTV (Model - Template - View)</li>
 </ul>
@@ -152,7 +152,7 @@ PermissionRequiredMixin
 <pre>
 git clone https://github.com/razzkross01/alke-wallet-django-orm
 
-cd alke-wallet
+cd alke-wallet-django-orm
 
 pip install -r requirements.txt
 
@@ -163,20 +163,22 @@ python manage.py runserver
 
 
 <h2> Vista previa</h2>
-<p align="center">
+
+<div align="center">
+
 <h3> Inicio de sesión</h3>
-<img src="docs/inicio_sesion.png" width="500">
+<img src="docs/inicio_sesion.png" width="500"><br><br>
 
 <h3> Menú principal</h3>
-<img src="docs/menu.png" width="500">
+<img src="docs/menu.png" width="500"><br><br>
 
 <h3> Transferencias</h3>
-<img src="docs/transferencia.png" width="500">
+<img src="docs/transferencia.png" width="500"><br><br>
 
 <h3> Reportes administrativos</h3>
 <img src="docs/reporte.png" width="500">
 
-</p>
+</div>
 
 <hr>
 <h2>Autor</h2>
